@@ -1,0 +1,140 @@
+﻿<div class="row ">
+    <div class="col-sm-7">
+        <div ui-calendar="uiConfig.calendar" ng-model="eventSources" class="calendarioEventos margin10"></div>
+    </div>
+        <div class="col-sm-5 ">
+            <div class="margin10">
+                <div ng-show="inserindoEvento" class="inserindoEvento">
+                    <form class="form-horizontal" ng-submit="inserirEvento()" name="formInserirEvento">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                 <a href="#" class="tituloEvento col-xs-10"">{{ eventoAdd.title || "Título do Evento" }}</a>
+                                 <a href="#" class="fecharInsercaoEvento" ng-click="fecharInsercao()"> <p class="fa fa-times col-xs-offset-1" >  </p></a>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Título: </label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputEmail3"  placeholder="Descrição" ng-model="eventoAdd.title" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Data início:</label>
+                                    <div class="col-sm-8">
+                                        <input type="datetime-local" class="form-control" step=1 id="inputEmail3" placeholder="Data Inicio" ng-model="eventoAdd.dataInicio" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Data fim: </label>
+                                    <div class="col-sm-8">
+                                        <input type="datetime-local" class="form-control" step=1  id="inputEmail3" placeholder="Data Fim" ng-model="eventoAdd.dataFim" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Valor couvert: </label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Valor Couvert" ng-model="eventoAdd.valorCouvert" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Valor consumação </label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Valor Consumação mínima" ng-model="eventoAdd.valorConsumacaoMinima" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Valor entrada: </label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Valor entrada" ng-model="eventoAdd.valorEntrada" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Valor reserva: </label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Valor reserva" ng-model="eventoAdd.valorReserva" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Funcionamento padrão:</label>
+                                    <div class="col-sm-2">
+                                        <input type="checkbox" class="form-control" id="inputEmail3" placeholder="Funcionamento padrão" ng-model="eventoAdd.funcionamentoPadrao">
+                                    </div>
+                                    <div class="col-sm-7">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" class="btn btn-default" ng-show="formInserirEvento">Inserir Evento</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>    
+                <div ng-show="editandoEvento" class="inserindoEvento">
+                    <form class="form-horizontal" ng-submit="AtualizarEvento()" name="formAtualizarEvento">
+                        <div class="panel panel-primary">
+                            <div class="panel-heading">
+                                 <a href="#" class="tituloEvento col-xs-10"">Editando: {{ eventoEdit.title }}</a>
+                                 <a href="#" class="fecharInsercaoEvento" ng-click="fecharAtualizacao()"> <p class="fa fa-times col-xs-offset-1" >  </p></a>
+                            </div>
+                            <div class="panel-body">
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Título: </label>
+                                    <div class="col-sm-8">
+                                        <input type="text" class="form-control" id="inputEmail3"  placeholder="Descrição" ng-model="eventoEdit.title" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Data início:</label>
+                                    <div class="col-sm-8">
+                                        <input type="datetime-local" class="form-control" step=1 id="inputEmail3" placeholder="Data Inicio" ng-model="eventoEdit.dataInicio" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Data fim: </label>
+                                    <div class="col-sm-8">
+                                        <input type="datetime-local" class="form-control" step=1  id="inputEmail3" placeholder="Data Fim" ng-model="eventoEdit.dataFim" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Valor couvert: </label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Valor Couvert" ng-model="eventoEdit.valorCouvert" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Valor consumação </label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Valor Consumação mínima" ng-model="eventoEdit.valorConsumacaoMinima" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Valor entrada: </label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Valor entrada" ng-model="eventoEdit.valorEntrada" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Valor reserva: </label>
+                                    <div class="col-sm-8">
+                                        <input type="number" class="form-control" id="inputEmail3" placeholder="Valor reserva" ng-model="eventoEdit.valorReserva" required>
+                                    </div>
+                                </div>
+                                <div class="row" style="border:10px; padding-bottom: 10px;">
+                                    <label for="inputEmail3" class="col-sm-4 control-label">Funcionamento padrão:</label>
+                                    <div class="col-sm-2">
+                                        <input type="checkbox" class="form-control" id="inputEmail3" placeholder="Funcionamento padrão" ng-model="eventoEdit.funcionamentoPadrao">
+                                    </div>
+                                    <div class="col-sm-7">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <button type="submit" class="btn btn-default" ng-show="formInserirEvento">Inserir Evento</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>    
+
+            </div>
+    </div>
+</div>

@@ -1,0 +1,166 @@
+﻿ .padding-topbotton {
+            margin: 10px 0px;
+        }
+
+
+
+.myGrid {
+    width: 500px;
+    height: 250px;
+}
+
+
+a.editable-click {
+    color: black;
+    border-bottom: solid 0px black;
+}
+
+a.editable-click:hover {
+    color: #337ab7;
+    border-bottom-color: #337ab7;
+}
+
+
+.padingItens {
+    padding: 3px 0px;
+}
+
+.padding-select {
+    padding: 4px 0px;
+}
+
+.fluarBtnEditarFoto {
+   margin-top: -30px;
+   margin-left: 300px;
+}
+
+
+.fluarBtnSalvarFoto {
+   margin-top: 60px;
+   margin-left: 300px;
+}
+
+.aplicarCropFoto
+ {
+   margin-top: -60px;
+   margin-left: 300px;
+}
+
+.espaco20px {
+    height: 20px;
+}
+
+
+.cropArea {
+      background: #E4E4E4;
+      overflow: hidden;
+      width:340px;
+      height:300px;
+
+    }
+
+.displayNone {
+    display: none;
+}
+
+
+.marginIconsAnimate {
+    margin: 0 10px 10px 30px;
+}
+
+.itemMenu {
+    margin: 10px;
+    border-bottom: 1px solid #eeead7;
+}
+
+.itemMenu a i {
+    margin-right: 10px;
+}
+
+.itemMenu a:hover {
+    font-weight: bold;
+}
+.itemMenu a {
+    text-decoration: none;
+}
+
+.itemMenu div ul li {
+    list-style: none;
+    margin: 10px 0px 10px 0px;
+}
+
+
+.comboPais {
+    margin: 10px;
+    padding: 5px;
+
+}
+
+.padding10 {
+    padding: 10px
+}
+
+.alignright {
+    text-align: right;
+}
+
+.margin10 {
+    margin: 10px;
+}
+
+
+.listaBaladas {
+    display: block;
+}
+
+
+.dt-loading {
+    display: none !important; 
+}
+
+.dataTable > thead > tr > th[class*="sort"]:after{
+    content: "" !important;
+}
+
+.dataTables_filter {
+    display: none;
+}
+
+
+.calendarioEventos {
+    width: 700px;
+    height: 700px;
+}
+
+
+.navbar{
+    position: fixed !important;
+    width: 100% !important;
+}
+
+.fc-center h2 {
+    font-size: 25px;
+}
+
+
+.tituloEvento {
+    color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+.tituloEvento a {
+   text-transform: none;
+   cursor: default
+   }
+
+span.fc-time {
+    display: none;
+}
+.fecharInsercaoEvento {
+      color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+.fc-content > .fc-time > span {
+    display: none;
+}

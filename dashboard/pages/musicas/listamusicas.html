@@ -1,0 +1,132 @@
+﻿    <div class="row">
+        <div class="col-lg-12">
+            <h3 class="page-header">Músicas</h1>
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-lg-10">
+                        </div>
+                        <div class="col-lg-2">
+                            <a href="#" ng-click="showAddMusica()" ng-show="lstMusica"><i class="fa fa-plus-circle fa-fw"></i>Adicionar</a>
+                            <a href="#" ng-click="showListMusica()" ng-show="addMusica"><i class="fa fa-times-circle fa-fw"></i>Cancelar Adição</a>
+                            <a href="#" ng-click="showListMusica()" ng-show="updtMusica"><i class="fa fa-times-circle fa-fw"></i>Cancelar Atualização</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.panel-heading -->
+                <div class="panel-body" ng-show="!lstMusicaCarregada">
+                    <div class="dataTable_wrapper">
+                        <ul class="fa-ul">
+                           <li class="fa-ul marginIconsAnimate">Carregando <i class="fa-3x fa-li fa fa-spinner fa-spin "></i></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-body" ng-show="lstMusica && lstMusicaCarregada">
+                    <div class="dataTable_wrapper">
+                        <table class="table table-striped table-bordered table-hover" id="dataTables-example">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nome Música</th>
+                                    <th>Link</th>
+                                    <th>Ações</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="odd gradeX" ng-repeat="model in listaMusicas track by model.id">
+                                    <td>{{model.id}}</td>
+                                    <td>{{model.nome_musica}}</td>
+                                    <td>{{model.link_musica}}</td>
+                                    <td class="center">
+                                        <a href="#" ng-click="editarMusica(model)"><i class="fa fa-info-circle fa-fw"></i> Editar</a>
+                                        <a href="#" ng-click="excluirMusica($index)"><i class="fa fa-minus-circle fa-fw"></i> Excluir</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="panel-body" ng-show="addMusica">
+                    <div class="dataTable_wrapper">
+                        <form class="form-horizontal" ng-submit="inserirMusica()">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Nome da música</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Nome da música" ng-model="MusicaAdd.nome_musica" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    </div>
+                                </div>
+                                    <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Link da música</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Link da música" ng-model="MusicaAdd.link_musica" required>
+                                        </div>
+                                    </div>
+                                 </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">Cadastrar Música</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="panel-body" ng-show="updtMusica">
+                    <div class="dataTable_wrapper">
+                        <form class="form-horizontal" ng-submit="alterarMusica()">
+                            <div class="form-group">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Nome da música</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Nome da música" ng-model="Musica.nome_musica" required>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                    </div>
+                                </div>
+                                    <div class="row">
+
+                                    <div class="col-sm-12">
+                                        <label for="inputEmail3" class="col-sm-2 control-label">Link da música</label>
+                                        <div class="col-sm-10">
+                                            <input type="text" class="form-control" id="inputEmail3" placeholder="Link da música" ng-model="Musica.link_musica" required>
+                                        </div>
+                                    </div>
+                                 </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="col-sm-offset-2 col-sm-10">
+                                    <button type="submit" class="btn btn-default">Atualizar Música</button>
+                                </div>
+
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
+            </div>
+            <!-- /.panel -->
+        </div>
+        <!-- /.col-lg-12 -->
+    </div>
+    <!-- /.row -->
